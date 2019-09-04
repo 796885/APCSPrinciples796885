@@ -1,5 +1,9 @@
 var balls=[];
+<<<<<<< HEAD
 var mainBall;
+=======
+var mainball;
+>>>>>>> f9a4314af59dc43886bfd2124d1337999348b816
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);

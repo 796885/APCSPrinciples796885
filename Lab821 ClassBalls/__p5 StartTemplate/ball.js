@@ -51,14 +51,26 @@ class Ball {
    this.loc.limit(5);
 
 
+this.acc=p5.Vector.sub(mainball.loc,this.loc);
+this.acc.normalize();
+this.acc.mult(0.5);
+
   }
 
   render(){
     fill(this.clr);
+<<<<<<< HEAD
     if (this.id == -1){
       ellipse (this.loc.x, this.loc.y, 40, 40);
     }else {
     ellipse(this.loc.x, this.loc.y, 15, 15);
   }
+=======
+    ellipse(this.loc.x, this.loc.y,11,11);
+
+    this.vel.add(this.acc);
+    this.vel.limit(5);
+    this.loc.add(this.vel);
+>>>>>>> f9a4314af59dc43886bfd2124d1337999348b816
   }
 }//  +++++++++++++++++++++++++++++++++++  End Ball Class
