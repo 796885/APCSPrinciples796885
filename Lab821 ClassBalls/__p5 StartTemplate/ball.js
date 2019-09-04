@@ -1,9 +1,10 @@
 class Ball {
-  constructor(x, y, dx, dy){
-    this.loc = createVector(x,y);
-    this.vel = createVector(dx,dy);
-    this.acc= createVector(0,1);
-    this.clr = color(random(255), random(255), random(255));
+  constructor(x, y, dx, dy, id){
+   this.loc = createVector(x, y);
+   this.vel = createVector(dx, dy);
+   this.acc = createVector(0,0);
+   this.clr = color(random(255), random(255), random(255));
+   this.id = id;
 
   }
 
@@ -30,14 +31,34 @@ class Ball {
 
   }
   update(){
-    this.vel.add(this.acc);
+    var distToMainBall;
+    if(this.id >= 0){
+     distToMainBall = this.loc.dist(mainBall.loc);
+     if(distToMainBall < 250){
+       //add attraction
+       this.acc = p5.Vector.sub(mainBall.loc, this.loc);
+       this.acc.normalize();
+       this.acc.mult(0.1);
+     }
+     if(distToMainBall < 150){
+       this.acc = p5.Vector.sub(this.loc,mainBall.loc);
+       this.acc.normalize();
+       this.acc.mult(0.5);
+     }
+    }
+     this.vel.add(this.acc);
+   this.loc.add(this.vel);
+   this.loc.limit(5);
 
-this.loc.add(this.vel);
 
   }
 
   render(){
     fill(this.clr);
-    ellipse(this.loc.x, this.loc.y,11,11);
+    if (this.id == -1){
+      ellipse (this.loc.x, this.loc.y, 40, 40);
+    }else {
+    ellipse(this.loc.x, this.loc.y, 15, 15);
   }
-}
+  }
+}//  +++++++++++++++++++++++++++++++++++  End Ball Class
