@@ -42,11 +42,12 @@ if(disttoMainBall<150){
 }
 
 render(){
+  this.heading =this.vel.heading();
 fill(this.clr);
 this.angle=this.angle+1;
 push();
 translate(this.loc.x,this.loc.y);
-rotate(this.angle)
+rotate(this.heading+1)
 triangle(-5,8,5,8,0,-8);
 pop();
 }
