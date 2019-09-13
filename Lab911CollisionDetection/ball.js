@@ -4,14 +4,14 @@ class Ball {
     this.vel = createVector(dx, dy);
     this.acc = createVector(0,0);
     this.clr = color(random(255), random(255), random(255));
-    this.w=25
+    // this.w=25
   }
 
   run(){
     this.checkedges();
     this.update();
     this.render();
-
+    this.Bounce();
   }
 
   checkedges(){
@@ -29,10 +29,10 @@ class Ball {
     }
   }
   update(){
-this.vel.add(this.acc);
-this.vel.add(this.acc);
+// this.vel.loc(this.acc);
+this.loc.add(this.vel);
     }
-  }
+
   render(){
 
     fill(this.clr);
@@ -48,7 +48,12 @@ this.loc.y < paddle.loc.y + paddle.h){
   return false;
 }
   }
-  Bounce
-}
+  Bounce(){
+    if (this.IsColliding()=== true){
+      this.vel.x = - this.vel.x;
+      this.vel.y= - this.vel.y;
+    }
+  }
+
 
 }//  +++++++++++++++++++++++++++++++++++  End Ball Class
