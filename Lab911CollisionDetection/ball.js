@@ -16,44 +16,48 @@ class Ball {
 
   checkedges(){
     if(this.loc.x < 0){
-      yhis.vel.x= -this.vel.x
+      this.vel.x= -this.vel.x
     }
     if(this.loc.x> width){
       this.vel.x= -this.vel.x
     }
     if(this.loc.y < 0){
-      yhis.vel.y= -this.vel.y
+      this.vel.y= -this.vel.y
     }
     if(this.loc.y> height){
       this.vel.y= -this.vel.y
     }
   }
   update(){
-// this.vel.loc(this.acc);
-this.loc.add(this.vel);
-    }
+    // this.vel.loc(this.acc);
+    this.loc.add(this.vel);
+  }
 
   render(){
 
     fill(this.clr);
-    ellipse(this.loc.x, this.loc.y,70,70);
+    ellipse(this.loc.x, this.loc.y,12,12);
   }
+
+
   IsColliding(){
     if(this.loc.x > paddle.loc.x &&
-    this.loc.x < paddle.loc.x + paddle.w &&
-  this.loc.y > paddle.loc.y &&
-this.loc.y < paddle.loc.y + paddle.h){
-  return true;
-} else{
-  return false;
-}
-  }
-  Bounce(){
-    if (this.IsColliding()=== true){
-      this.vel.x = - this.vel.x;
-      this.vel.y= - this.vel.y;
+      this.loc.x < paddle.loc.x + paddle.w &&
+      this.loc.y > paddle.loc.y &&
+      this.loc.y < paddle.loc.y + paddle.h){
+        return true;
+      } else{
+        return false;
+      }
     }
-  }
+
+
+    Bounce(){
+      if (this.IsColliding()=== true){
+        this.vel.x = -this.vel.x;
+        this.vel.y= - this.vel.y;
+      }
+    }
 
 
 }//  +++++++++++++++++++++++++++++++++++  End Ball Class
