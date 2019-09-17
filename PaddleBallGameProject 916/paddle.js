@@ -21,7 +21,7 @@ this.loc = p5.Vector.lerp(this.loc,mouseLoc, 0.09);
   render(){
 
     fill(this.clr);
-    rect(this.loc.x, this.loc.y,this.w200, 40);
+    rect(this.loc.x, this.loc.y,200, 40);
   }//render
 
 
