@@ -10,7 +10,7 @@ function setup() {
   cnv.position((windowWidth-width)/2, 30);
   background(5, 5, 5);
   fill(200, 30, 150);
-loadObjects(5);
+  loadObjects(5);
 
 }
 
@@ -20,13 +20,13 @@ function draw() {
   runObjects();
 
 
-    if(gameState===1){
-      startGame();
-    }else if(gameState===2){
-      playGame();
-    }else if(gameState===3){
-      endGame();
-    }
+  if(gameState===1){
+    startGame();
+  }else if(gameState===2){
+    playGame();
+  }else if(gameState===3){
+    endGame();
+  }
 
 }
 function loadObjects(n){
@@ -42,24 +42,34 @@ function runObjects(){
   }
 }
 function startGame(){
-{textSize(75);
-fill(150,150,150);
-textAlign(CENTER);}
-textSize(5);
-text("Paddle Ball",200,400);
-textSize(5);
-text("Easy", 400,600);
-textSize(5);
-text("Medium", 500,600);
-textSize(5);
-text("Hard", 600,600);
-textSize(5);
-text("Instructions", 700,600);
-}
-function playGame(){
-  runObjects();
+  {textSize(20);
+    fill(150,150,150);
+    textAlign(CENTER);}
+    {textSize(80);
+      text("Paddle Ball",400,300);}
+      {textSize(20);
+        {fill(200,0,0);
+          rect(120,460,150,50);
+          fill(5,5,5);
+          text("Easy",200,500);}
+          {fill(0,200,0);
+            rect(325,460,150,50)
+            fill(5,5,5);
+            text("Medium", 400,500);}
+            {fill(0,0,200);
+              rect(530,460,150,50);
+              fill(5,5,5);
+            text("Hard", 600,500);}
+            {fill(150,150,150);
+              rect(325,610,150,50);
+              fill(5,5,5);
+            text("Instructions", 400,650);}
+          }
+          }
+          function playGame(){
+            runObjects();
 
-}
-function endgame(){
+          }
+          function endgame(){
 
-}
+          }
