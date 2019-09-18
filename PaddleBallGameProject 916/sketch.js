@@ -42,11 +42,19 @@ function runObjects(){
   }
 }
 function startGame(){
-textSize(75);
+{textSize(75);
 fill(150,150,150);
-textAlign(CENTER);
+textAlign(CENTER);}
+textSize(5);
 text("Paddle Ball",200,400);
-
+textSize(5);
+text("Easy", 400,600);
+textSize(5);
+text("Medium", 500,600);
+textSize(5);
+text("Hard", 600,600);
+textSize(5);
+text("Instructions", 700,600);
 }
 function playGame(){
   runObjects();
