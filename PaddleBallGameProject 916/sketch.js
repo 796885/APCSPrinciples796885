@@ -5,6 +5,7 @@
 var balls=[];
 var paddle;
 var gameState=1;
+//var gameState=3;
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
@@ -38,7 +39,7 @@ function loadObjects(n){
 function runObjects(){
   paddle.run();
   for(var i=0; i<balls.length; i++){
-    balls[i].run();
+   balls[i].run();
   }
 }
 function startGame(){
@@ -47,6 +48,8 @@ function startGame(){
     textAlign(CENTER);}
     {textSize(80);
       text("Paddle Ball",400,300);}
+      {textSize(40)
+       text("SCORE:",100,790);}
       {textSize(20);
         {fill(200,0,0);
           rect(120,460,150,50);
@@ -67,7 +70,17 @@ function startGame(){
           }
           }
           function playGame(){
-            runObjects();
+          loadObjects();{
+            paddle= new Paddle(50,400,95,95);
+            for(var i=0; i< n; i++)
+              balls[i] =new Ball(random(width),0, random(-5,5),random(-5,5));}
+             runObjects();{
+               paddle= new Paddle(50,400,95,95);
+               for(var i=0; i< n; i++){
+                 balls[i] =new Ball(random(width),0, random(-5,5),random(-5,5));}
+             }
+
+
 
           }
           function endgame(){
