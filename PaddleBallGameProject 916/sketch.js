@@ -18,7 +18,7 @@ function setup() {
 //  The draw function is called @ 30 fps
 function draw() {
   background(5, 5, 5);
-  runObjects();
+  //runObjects();
 
 
   if(gameState===1){
@@ -49,7 +49,7 @@ function startGame(){
     {textSize(80);
       text("Paddle Ball",400,300);}
       {textSize(40)
-       text("SCORE:",100,790);}
+       text("SCORE:0",100,790);}
       {textSize(20);
         {fill(200,0,0);
           rect(120,460,150,50);
@@ -68,17 +68,13 @@ function startGame(){
               fill(5,5,5);
             text("Instructions", 400,650);}
           }
+
           }
           function playGame(){
-          loadObjects();{
-            paddle= new Paddle(50,400,95,95);
-            for(var i=0; i< n; i++)
-              balls[i] =new Ball(random(width),0, random(-5,5),random(-5,5));}
-             runObjects();{
-               paddle= new Paddle(50,400,95,95);
-               for(var i=0; i< n; i++){
-                 balls[i] =new Ball(random(width),0, random(-5,5),random(-5,5));}
-             }
+          loadObjects();
+
+             runObjects();
+
 
 
 
