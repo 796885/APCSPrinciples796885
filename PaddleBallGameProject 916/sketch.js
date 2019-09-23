@@ -39,48 +39,60 @@ function loadObjects(n){
 function runObjects(){
   paddle.run();
   for(var i=0; i<balls.length; i++){
-   balls[i].run();
+    balls[i].run();
   }
 }
 function startGame(){
-  {textSize(20);
-    fill(150,150,150);
-    textAlign(CENTER);}
-    {textSize(80);
-      text("Paddle Ball",400,300);}
-      {textSize(40)
-       text("SCORE:0",100,790);}
-      {textSize(20);
-        {fill(200,0,0);
-          rect(120,460,150,50);
-          fill(5,5,5);
-          text("Easy",200,500);}
-          {fill(0,200,0);
-            rect(325,460,150,50)
-            fill(5,5,5);
-            text("Medium", 400,500);}
-            {fill(0,0,200);
-              rect(530,460,150,50);
-              fill(5,5,5);
-            text("Hard", 600,500);}
-            {fill(150,150,150);
-              rect(325,610,150,50);
-              fill(5,5,5);
-            text("Instructions", 400,650);}
-            function mousePressed()
-            
-          }
 
-          }
-          function playGame(){
-          loadObjects();
+  //PaddleBall Text
+  fill(150,150,150);
+  textAlign(CENTER);
+  textSize(80);
+  text("Paddle Ball",400,300);
 
-             runObjects();
+  //Score Text
+  textSize(40)
+  text("SCORE:0",100,790);
+
+  //Easy Button
+  textSize(20);
+  fill(200,0,0);
+  rect(120,460,150,50);
+  fill(5,5,5);
+  text("Easy",200,500);
+
+  //medium button
+  fill(0,200,0);
+  rect(325,460,150,50)
+  fill(5,5,5);
+  text("Medium", 400,500);
+
+  //Hard Button
+  fill(0,0,200);
+  rect(530,460,150,50);
+  fill(5,5,5);
+  text("Hard", 600,500);
+
+  //Instructions Button
+  fill(150,150,150);
+  rect(325,610,150,50);
+  fill(5,5,5);
+  text("Instructions", 400,650);
+
+}
+
+
+function mousePressed(){
+
+}
 
 
 
 
-          }
-          function endgame(){
+function playGame(){
+  runObjects();
 
-          }
+}
+function endgame(){
+
+}
