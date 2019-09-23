@@ -67,6 +67,8 @@ function startGame(){
               rect(325,610,150,50);
               fill(5,5,5);
             text("Instructions", 400,650);}
+            function mousePressed()
+            
           }
 
           }
