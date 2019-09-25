@@ -5,6 +5,7 @@
 var balls=[];
 var paddle;
 var gameState=1;
+var gameState=2;
 //var gameState=3;
 function setup() {
   var cnv = createCanvas(800, 800);
@@ -80,7 +81,13 @@ function startGame(){
   text("Instructions", 400,650);
 
 }
-
+function Instructions();
+textSize(30)'
+text("Move the mouse in order to control the paddle and hit the balls.",400,200)
+text("You are only allowed to lose three balls off the bottom of the screen",400,300)
+text("and each time a ball hits the paddle you earn one point.",400,400)
+text("In order to win you must earn 25 points and if more than 3 have fallen",400,500)
+text("off the screen, you lose.",400,600);
 
 function mousePressed(){
 

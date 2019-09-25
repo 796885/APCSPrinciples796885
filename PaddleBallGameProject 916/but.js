@@ -1,8 +1,18 @@
+
 ifTouched();
 if(difficulty==="easy")||if(difficulty==="medium")||if(difficulty==="hard")||if(difficulty==="instructions")
-
-
-
+ if(difficulty==="easy"){
+   loadObjects(5);
+ }
+ if(difficulty==="medium"){
+   loadObjects(7);
+ }
+ if(difficulty==="hard"){
+   loadObjects(11);
+ }
+ if(difficult==="instructions"){
+ }
+gameState===2
 
 function ifTouched(){
   (if gameState===1)
