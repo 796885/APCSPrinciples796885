@@ -1,16 +1,37 @@
 
+class Button{
+  constructor(x,y,w,h,msg,clr){
+    this.loc=createVector(x,y);
+    this.w=w;
+    this.h=h;
+    this.msg=msg;
+    this.clr=color(255,255,255)
+  }
+  render(){
+    fill(this.clr);
+    rect(this.loc.x,this.loc.y,this.h,this.w);
+
+  }
+  this.isTouched(){
+    
+  }
+}
 ifTouched();
 if(difficulty==="easy")||if(difficulty==="medium")||if(difficulty==="hard")||if(difficulty==="instructions")
  if(difficulty==="easy"){
    loadObjects(5);
  }
+ gameState===2
  if(difficulty==="medium"){
    loadObjects(7);
  }
+ gameState===2
  if(difficulty==="hard"){
    loadObjects(11);
  }
+ gameState===2
  if(difficult==="instructions"){
+   function Instructions();
  }
 gameState===2
 
