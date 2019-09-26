@@ -4,14 +4,12 @@
 //  The setup function function is called once when your program begins
 var balls=[];
 var paddle;
-var gameState=1;
-var gameState=2;
-var gameState=3;
+var gameState =1;
+var btnEasy, btnMedium, btnHard, btnBTME, btnBTMI, btnInstructions;
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   background(5, 5, 5);
-  fill(200, 30, 150);
   loadObjects(5);
 
 }
@@ -20,36 +18,16 @@ function setup() {
 function draw() {
   background(5, 5, 5);
   //runObjects();
-
-
   if(gameState===1){
     startGame();
   }else if(gameState===2){
     playGame();
-  // }else if(gameState===3){
-    // endGame();
+  }else if(gameState===3){
+    endGame();
   }
-  //make buttons
-function newButton(){
-  btnEasy + new Button(120,460,150,50,color(200,0,0));
-  btnMedium + new Button(325,460,150,50,color(0,200,0));
-  btnHard + new Button(325,460,150,50,color(0,0,200));
-}
+
 }
 
-
-function loadObjects(n){
-  paddle= new Paddle(50,400,95,95);
-  for(var i=0; i< n; i++){
-    balls[i] =new Ball(random(width),0, random(-5,5),random(-5,5));
-  }
-}
-function runObjects(){
-  paddle.run();
-  for(var i=0; i<balls.length; i++){
-    balls[i].run();
-  }
-}
 function startGame(){
 
   //PaddleBall Text
@@ -62,31 +40,32 @@ function startGame(){
   textSize(40)
   text("SCORE:0",100,790);
 
+  btnEasy.render();
+  btnMedium.render();
+
+
   //Easy Button
   textSize(20);
-  fill(200,0,0);
-  rect(120,460,150,50);
   fill(5,5,5);
   text("Easy",200,500);
 
   //medium button
-  fill(0,200,0);
-  rect(325,460,150,50)
+
   fill(5,5,5);
   text("Medium", 400,500);
 
   //Hard Button
-  fill(0,0,200);
-  rect(530,460,150,50);
+btnHard.render();
   fill(5,5,5);
   text("Hard", 600,500);
 
   //Instructions Button
-  fill(150,150,150);
-  rect(325,610,150,50);
+  btnInstructions.render();
   fill(5,5,5);
   text("Instructions", 400,650);
 
+
+//instructions screen
 }
 function Instructions(){
 textSize(25);
@@ -98,11 +77,15 @@ text("off the screen, you lose.",400,600);
 
 
 }
-
+//making Buttons
 function newButton(){
-  btnEasy + new Button(120,460,150,50,color(200,0,0));
-  btnMedium + new Button(325,460,150,50,color(0,200,0));
-  btnHard + new Button(325,460,150,50,color(0,0,200));
+  btnEasy = new Button(120,460,150,50,color(200,0,0));
+  btnMedium = new Button(325,460,150,50,color(0,200,0));
+  btnHard = new Button(325,460,150,50,color(0,0,200));
+  btnInstructions = new Button (325,610,150,50,color(150,150,150));
+  btnBTMI = new Button (325,610,150,50,color(150,150,150));
+  btnReplay = new Button (70,100,150,50,color(150,150,150));
+  btnBTME = new button ()
 }
 
 function playGame(){
@@ -111,4 +94,16 @@ function playGame(){
 }
 function endgame(){
 
+}
+function loadObjects(n){
+  paddle= new Paddle(50,400,95,95);
+  for(var i=0; i< n; i++){
+    balls[i] =new Ball(random(width),0, random(-5,5),random(-5,5));
+  }
+}
+function runObjects(){
+  paddle.run();
+  for(var i=0; i<balls.length; i++){
+    balls[i].run();
+  }
 }
