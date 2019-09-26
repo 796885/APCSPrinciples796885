@@ -13,7 +13,14 @@ class Button{
 
   }
   this.isTouched(){
-    
+    if(mouseIsPressed&&
+    mouseX > this.loc.x&&
+  mousex < this.loc.x+this.w &&
+mouseY > this.loc.y&&
+mouseY < this.loc.y +this.h){
+  return true;
+}
+
   }
 }
 ifTouched();

@@ -26,15 +26,18 @@ function draw() {
     startGame();
   }else if(gameState===2){
     playGame();
-  }else if(gameState===3){
-    endGame();
+  // }else if(gameState===3){
+    // endGame();
   }
-function createButton(){
- button "easy"= new Button()
-
+  //make buttons
+function newButton(){
+  btnEasy + new Button(120,460,150,50,color(200,0,0));
+  btnMedium + new Button(325,460,150,50,color(0,200,0));
+  btnHard + new Button(325,460,150,50,color(0,0,200));
+}
 }
 
-}
+
 function loadObjects(n){
   paddle= new Paddle(50,400,95,95);
   for(var i=0; i< n; i++){
@@ -96,8 +99,11 @@ text("off the screen, you lose.",400,600);
 
 }
 
-
-
+function newButton(){
+  btnEasy + new Button(120,460,150,50,color(200,0,0));
+  btnMedium + new Button(325,460,150,50,color(0,200,0));
+  btnHard + new Button(325,460,150,50,color(0,0,200));
+}
 
 function playGame(){
   runObjects();
