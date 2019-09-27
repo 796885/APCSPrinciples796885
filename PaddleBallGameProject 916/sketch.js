@@ -10,6 +10,7 @@ function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   background(5, 5, 5);
+  function newButton();
   loadObjects(5);
 
 }
@@ -40,27 +41,26 @@ function startGame(){
   textSize(40)
   text("SCORE:0",100,790);
 
-  btnEasy.render();
-  btnMedium.render();
 
 
   //Easy Button
+  btnEasy.run();
   textSize(20);
   fill(5,5,5);
   text("Easy",200,500);
 
   //medium button
-
+  btnMedium.run();
   fill(5,5,5);
   text("Medium", 400,500);
 
   //Hard Button
-btnHard.render();
+btnHard.run();
   fill(5,5,5);
   text("Hard", 600,500);
 
   //Instructions Button
-  btnInstructions.render();
+  btnInstructions.run();
   fill(5,5,5);
   text("Instructions", 400,650);
 
@@ -72,20 +72,20 @@ textSize(25);
 text("Move the mouse in order to control the paddle and hit the balls.",400,200)
 text("You are only allowed to lose three balls off the bottom of the screen",400,300)
 text("and each time a ball hits the paddle you earn one point.",400,400)
-text("In order to win you must earn 25 points and if more than 3 balls have fallen",400,500)
+text("In order to win you must earn 10 points and if more than 3 balls have fallen",400,500)
 text("off the screen, you lose.",400,600);
 
 
 }
 //making Buttons
 function newButton(){
-  btnEasy = new Button(120,460,150,50,color(200,0,0));
-  btnMedium = new Button(325,460,150,50,color(0,200,0));
-  btnHard = new Button(325,460,150,50,color(0,0,200));
-  btnInstructions = new Button (325,610,150,50,color(150,150,150));
-  btnBTMI = new Button (325,610,150,50,color(150,150,150));
-  btnReplay = new Button (70,100,150,50,color(150,150,150));
-  btnBTME = new button ()
+  btnEasy = new Button(125,470,50,150,color(200,0,0));
+  btnMedium = new Button(325,470,50,150,color(0,200,0));
+  btnHard = new Button(525,470,50,150,color(0,0,200));
+  btnInstructions = new Button (325,615,50,150,color(150,150,150));
+  // btnBTMI = new Button (325,610,150,50,color(150,150,150));
+  //btnReplay = new Button (70,100,150,50,color(150,150,150));
+  //btnBTME = new button ()
 }
 
 function playGame(){
