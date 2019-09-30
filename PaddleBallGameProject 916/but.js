@@ -17,7 +17,7 @@ class Button{
 
   }
 
-  isTouched(){
+  ifTouched(){
     if(mouseIsPressed &&
       mouseX > this.loc.x &&
       mousex < this.loc.x+this.w &&
@@ -30,9 +30,10 @@ class Button{
 
     }
 
-ifTouched();
+function ifTouched();
  if(difficulty==="easy")||if(difficulty==="medium")||if(difficulty==="hard")||if(difficulty==="instructions");
- if(difficulty==="easy"){
+
+if(difficulty==="easy"){
    loadObjects(5);
    gameState===2
  }
@@ -46,7 +47,7 @@ ifTouched();
    gameState===2
  }
  if(difficult==="instructions"){
-   function Instructions();
+//   function Instructions();
    gameState===3
  }
 
