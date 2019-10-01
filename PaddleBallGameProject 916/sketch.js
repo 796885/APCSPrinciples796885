@@ -9,13 +9,13 @@ var score=0
 var gameState =1;
 var win;
 var btnEasy, btnMedium, btnHard, btnBTME, btnBTMI, btnInstructions;
+// loadObjects();
+// newButton();
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   background(5, 5, 5);
-  loadObjects();
   newButton();
-
 }
 
 //  The draw function is called @ 30 fps
@@ -32,8 +32,8 @@ function draw() {
       gameState = 1;
       endGame();//end splash screen
     }
-
-  } //end of draw function
+  }
+} //end of draw function
 
   function startGame(){
 
@@ -50,23 +50,27 @@ function draw() {
 
 
     //Easy Button
-    btnEasy.render();
+    btnEasy.run();
     textSize(20);
     fill(5,5,5);
     text("Easy",200,500);
+    if(btnEasy.isTouched()){//figure why button is not being detected
+      gameState=2;
+      LoadObjects(5)
+    }
 
     //medium button
-    btnMedium.render();
+    btnMedium.run();
     fill(5,5,5);
     text("Medium", 400,500);
 
     //Hard Button
-    btnHard.render();
+    btnHard.run();
     fill(5,5,5);
     text("Hard", 600,500);
 
     //Instructions Button
-    btnInstructions.render();
+    btnInstructions.run();
     fill(5,5,5);
     text("Instructions", 400,650);
     Instructions();
@@ -110,7 +114,11 @@ function draw() {
       win = 'no';
     }
 }
-
+   function LoadObjects(n){
+    for(var i=0; i<n; i++){
+      balls[i] = new Ball(random(width),random(height),5,4);
+    }
+   }
     function endgame(){
       if (win === "yes"){//score>0
         textSize(95);
@@ -124,12 +132,13 @@ function draw() {
         btnBTME.run();
         fill(100, 150, 100);
         textSize(30);
-        text("To Main Menu", 600, 500)
+        text("Return to Main Menu", 600, 500)
         if (btnBTME.isTouched()){
           gameState =1;
-      }
         }
+      }
     }
+
   // }//end endgame
   // function loadObjects(n){
   //   paddle= new Paddle(50,400,95,95);
@@ -151,4 +160,3 @@ function draw() {
   //     gameState =1;
   //   }
 ///
-}

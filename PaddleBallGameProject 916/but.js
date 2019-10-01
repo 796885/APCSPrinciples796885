@@ -17,74 +17,76 @@ class Button{
 
   }
 
-  ifTouched(){
+  isTouched(){
     if(mouseIsPressed &&
       mouseX > this.loc.x &&
-      mousex < this.loc.x+this.w &&
+      mouseX < this.loc.x+this.w &&
       mouseY > this.loc.y &&
       mouseY < this.loc.y +this.h){
+        console.log("I got here")
         return true;
       }else{
         return false;
       }
 
-    }
-
-function ifTouched();
- if(difficulty==="easy")||if(difficulty==="medium")||if(difficulty==="hard")||if(difficulty==="instructions");
-
-if(difficulty==="easy"){
-   loadObjects(5);
-   gameState===2
- }
-
- if(difficulty==="medium"){
-   loadObjects(7);
-   gameState===2
- }
- if(difficulty==="hard"){
-   loadObjects(11);
-   gameState===2
- }
- if(difficult==="instructions"){
-//   function Instructions();
-   gameState===3
- }
-
-
-function ifTouched(){
-  (if gameState===1)
-  //Easy Button touched
-  if(mouseIsPressed&&
-  mouseX>50&&
-  mouseX<125&&
-  mouseY>150&&
-  mouseY<470){
-    difficulty="easy"
   }
-  //Medium Button touched
-  if(mouseIsPressed&&
-  mouseX>50&&
-  mouseX<325&&
-  mouseY>150&&
-  mouseY<470){
-    difficulty="medium"
 }
-//Hard Button touched
-if(mouseIsPressed&&
-mouseX>50&&
-mouseX<525&&
-mouseY>150&&
-mouseY<470){
-  difficulty="hard"
-}
-//Instructions Button touched
-if(mouseIsPressed&&
-mouseX>50&&
-mouseX<325&&
-mouseY>150&&
-mouseY<615){
-  difficulty="instructions"
-}
-
-}
+    //
+    // function ifTouched();
+    // if(difficulty==="easy")||if(difficulty==="medium")||if(difficulty==="hard")||if(difficulty==="instructions");
+    //
+    // if(difficulty==="easy"){
+    //   loadObjects(5);
+    //   gameState===2
+    // }
+    //
+    // if(difficulty==="medium"){
+    //   loadObjects(7);
+    //   gameState===2
+    // }
+    // if(difficulty==="hard"){
+    //   loadObjects(11);
+    //   gameState===2
+    // }
+    // if(difficulty==="instructions"){
+    //   //   function Instructions();
+    //   gameState===3
+    // }
+    //
+    //
+    // function ifTouched(){
+    //   (if gameState===1)
+    //   //Easy Button touched
+    //   if(mouseIsPressed&&
+    //     mouseX>50&&
+    //     mouseX<125&&
+    //     mouseY>150&&
+    //     mouseY<470){
+    //       difficulty="easy"
+    //     }
+    //     //Medium Button touched
+    //     if(mouseIsPressed&&
+    //       mouseX>50&&
+    //       mouseX<325&&
+    //       mouseY>150&&
+    //       mouseY<470){
+    //         difficulty="medium"
+    //       }
+    //       //Hard Button touched
+    //       if(mouseIsPressed&&
+    //         mouseX>50&&
+    //         mouseX<525&&
+    //         mouseY>150&&
+    //         mouseY<470){
+    //           difficulty="hard"
+    //         }
+    //         //Instructions Button touched
+    //         if(mouseIsPressed&&
+    //           mouseX>50&&
+    //           mouseX<325&&
+    //           mouseY>150&&
+    //           mouseY<615){
+    //             difficulty="instructions"
+    //           }
+    //
+    //         }

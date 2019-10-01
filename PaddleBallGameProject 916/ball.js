@@ -1,5 +1,5 @@
 class Ball {
-  constructor(x, y, dx, dy, id){
+  constructor(x, y, dx, dy){
     this.loc = createVector(x, y);
     this.vel = createVector(dx, dy);
     this.acc = createVector(0,0.5,);
@@ -58,4 +58,4 @@ class Ball {
         this.vel.y= - this.vel.y;
       }
     }
-}
+  }
