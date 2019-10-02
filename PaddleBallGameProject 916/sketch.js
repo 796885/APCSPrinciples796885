@@ -114,13 +114,20 @@ function draw() {
       win = 'no';
     }
 }
-   function LoadObjects(n){
-    for(var i=0; i<n; i++){
-      balls[i] = new Ball(random(width),random(height),5,4);
-    }
-   }
+function checkRed(){
+  
+}
+function LoadObjects(n){
+  for(var i=0; i<n; i++){
+    balls[i] = new Ball(random(width),random(height),5,4);
+  }
+  paddle= new Paddle(50,400,95,95);
+}
+
+   //  paddle = new Paddle(mouseX, mouseY, 30, 100);
+   // }
     function endgame(){
-      if (win === "yes"){//score>0
+      if (win === "yes"){//score>0S
         textSize(95);
         fill(155,155,155);
         text ("You Won!",325,400);
@@ -144,13 +151,14 @@ function draw() {
   //   paddle= new Paddle(50,400,95,95);
   //   for(var i=0; i< n; i++){
   //     balls[i] =new Ball(random(width),0, random(-5,5),random(-5,5));
-  //   }
-  // }
-  // function runObjects(){
-  //   paddle.run();
-  //   for(var i=0; i<balls.length; i++){
-  //     balls[i].run();
-  //   }
+
+
+  function runObjects(){
+    paddle.run();
+    for(var i=0; i<balls.length; i++){
+      balls[i].run();
+    }
+  }
   //   fill(200, 200, 200) //Main Menu
   //   btnBTME.run();
   //   fill(100, 150, 100);
