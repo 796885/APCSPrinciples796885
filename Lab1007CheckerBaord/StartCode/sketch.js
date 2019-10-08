@@ -7,7 +7,7 @@
 
 //  Global variables
 var squares = []  // declare b1 as a global variable
-
+var class
 
 // put setup code here
 function setup() {
