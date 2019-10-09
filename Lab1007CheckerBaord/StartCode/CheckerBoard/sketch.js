@@ -31,3 +31,7 @@ function loadSquares(){
   //  calculate the x and y position interms of the loop control variable
 
 }
+var i, j, class;
+for (i = 0; i < 8; i++) {
+    for (j = 0; j < 8; j++) {
+        class = '';

@@ -1,10 +1,16 @@
 class Square {
   constructor(x, y, w, h){
-    this.loc = createVector(x, y);
-    this.w=w;
-    this.h= h;
-    this.clr = color(random(255), random(255), random(255));
-    this.w=200
+<<<<<<< HEAD
+    this.w=0;
+    this.h= 0;
+    this.x = 100;
+    this.y=100;
+=======
+    this.x = 0;
+    this.y=0;
+    this.w= 100;
+    this.h = 100;
+>>>>>>> 420ed08730b95f8a7f94643a6a5cb9fab4ee3b9b
 //  Add perameters to your constructor function
 function Sqr(){
  if
@@ -14,10 +20,7 @@ function Sqr(){
   }
 
 }//  End of Square constructor function
-var i, j, class;
-for (i = 0; i < 8; i++) {
-    for (j = 0; j < 8; j++) {
-        class = '';
+
 
 
 }
