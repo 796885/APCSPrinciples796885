@@ -18,15 +18,16 @@ function draw() {
 }
 function bubbleSort(){
   begin BubbleSort(45,76,21,2,5,90);
+for (var = j = list.length; j> 0; j --)}
   for(var i=0;i<list.length-1;i++){
 
   }
 
-  if list[i] > list[i+1]
+  if list[i] > list[i+1]{
   swap(list, i, i+1)
   end if
   end for
   return list
-
+}
 
 }
