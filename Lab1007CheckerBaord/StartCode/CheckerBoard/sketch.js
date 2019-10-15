@@ -27,18 +27,22 @@ function setup(){
       for(var x=0; x<8; x++){ //nested for loop
         if(i%2===0){
           if(x%2===0){
-            var shade=color(102,102,0); //even=yellow
+            //var shade=color(102,102,0); //even=yellow
+              var shade=color(153, 255, 153);
           }
           if(x%2!==0){ //Is the number odd?
-            var shade=color(179, 119, 0); //odd=orange
+          //  var shade=color(179, 119, 0); //odd=orange
+            var shade=color(179, 179, 255);
           }
         }
         if(i%2!==0){ //fixes for the rows
           if(x%2!==0){
-            var shade=color(102, 102, 0);
+            //var shade=color(102, 102, 0);
+              var shade=color(153, 255, 153);
           }
           if(x%2===0){
-            var shade=color(179, 119, 0);
+            //var shade=color(179, 119, 0);
+            var shade=color(179, 179, 255);
           }
         }
         squares[x+(8*i)]= new Square(100*x,100*i,100,100, shade); //loads array with square objects
