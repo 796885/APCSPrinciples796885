@@ -10,7 +10,7 @@ function setup() {
   background(5, 5, 5);
   fill(200, 30, 150);
 
-    for (var x = 0; x < 10; x ++){
+    for (var x = 0; x < 10; x++){
         list[x] = Math.floor(random(1,100));
       }
 
