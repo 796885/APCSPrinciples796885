@@ -1,9 +1,9 @@
 //  Natalie Hallmann
-// 	10/9
+// 	10/9 bubbleSort
 //  This is a comment
 //  The setup function function is called once when your program begins
-var list=[45,76,21,2,5,90,35,70,8,65]
-bubbleSort()
+
+var list=[]
 
 function setup() {
   var cnv = createCanvas(800, 800);
@@ -11,6 +11,10 @@ function setup() {
   background(5, 5, 5);
   fill(200, 30, 150);
 
+
+  for (var x = 0; x < 10; x++){
+    list[x] = Math.floor(random(1,100));
+  }
 }
 
 //  The draw function is called @ 30 fps
@@ -18,19 +22,15 @@ function draw() {
 
 }
 function bubbleSort(list){
-  // begin bubbleSort(45,76,21,2,5,90,35,70,8,65);
-  for (var j = list.length; j> 0; j --)
-  for(var i=0;i<list.length-1;i++){
+  for(var j = list.length; j > 0 ; j --){
+      for (var i = 0 ; i < list.length; i ++){
 
-  }
-}
-
-  if list[i] > list[i+1]{
-    swap(list, i, i+1)
-    end if
-    end for
-    return list
-  }
-
-}
-console.log.list
+          if (list[i+1] < list [i]){
+            var temp = list[i];
+            list[i] = list[i+1];
+            list[i+1] = temp;
+          }
+        }
+      }
+      console.log(list);
+    }

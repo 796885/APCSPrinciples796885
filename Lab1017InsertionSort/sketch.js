@@ -21,18 +21,35 @@ function draw() {
 
 }
 
-function InsertionSort(list){
- for (var i = 1; i < list.length; i++){
-   for (var j = i; j > 0; j--){
-     if(list[j] < list[j-1]){
-       swap (list, j, j-1);
-     }
-   }
- }
+function findMedian(list){
+  if(list.length % 2 === 0){
+    var half = list.length / 2;
+    var twoMedian = list[half] + list[half+1];
+    var medianEven = twoMedian/2;
+    console.log(medianEven);
+  }
+  else if(list.length % 2 === 1){
+      var half = list.length /2;
+      var medianOdd = list[half];
+      console.log(medianOdd);
+  }
 }
-function swap (list, x, y){
-  var tmp = list[x];
-  list[x] = list[y];
-  list[y] = tmp;
 
+
+function insertionSort(list){
+  for (var i = 1; i < list.length; i++){
+              for (var j = i; j > 0; j--){
+                  if (list[j] < list[j-1]) {
+                      swap(list, j , j-1);
+                  }
+              }
+          }
+
+  console.log(list);
+}
+
+function swap(list, a, b){ 
+  var temp = list[a];
+  list[a] = list[b];
+  list[b] = temp;
 }

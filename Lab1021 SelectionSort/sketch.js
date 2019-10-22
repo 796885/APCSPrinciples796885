@@ -17,23 +17,43 @@ function setup() {
     }
   }
 
-function SelectionSort(list){
-  for (var i = 0; i < list.length -1; i++){
-    var index = i;
-    for (var j = i + 1; j < list.length; j++){
-      index = j;
-      if (list[j] < list[index]){
-          index = j;
-      }
+  function findMedian(list){
+    if(list.length % 2 === 0){ 
+      var half = list.length / 2;
+      var twoMedian = list[half] + list[half+1];
+      var medianEven = twoMedian/2;
+      console.log(medianEven);
     }
-}
-  var smallerNumber = list[index];
-  list[index] = list[i];
-  list[i] = smallerNumber;
-}
+    else if(list.length % 2 === 1){
+        var half = list.length /2;
+        var medianOdd = list[half];
+        console.log(medianOdd);
+    }
+  }
 
 
-}
+  function selectionSort(list){
+    for (var i  = 0; i <list.length -1; i++){
+             var small = i;
+             for (var j = i+1; j <list.length; j++){
+
+                 if (list[j] < list[small]){
+                     small = j;
+                 }
+             }
+             swap(list, i ,small);
+         }
+
+    console.log(list);
+  }
+
+
+
+  function swap(list, a, b){
+    var temp = list[a];
+    list[a] = list[b];
+    list[b] = temp;
+  }
 
 //  The draw function is called @ 30 fps
 function draw() {
