@@ -6,6 +6,8 @@ var list=[];
 var Compares = 0;
 Swaps = 0;
 
+millis();
+
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
@@ -18,7 +20,7 @@ function setup() {
   }
 
   function findMedian(list){
-    if(list.length % 2 === 0){ 
+    if(list.length % 2 === 0){
       var half = list.length / 2;
       var twoMedian = list[half] + list[half+1];
       var medianEven = twoMedian/2;
