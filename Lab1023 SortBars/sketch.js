@@ -21,7 +21,7 @@ function setup() {
 }
 function loadBars(num){
   for (var i = 0; i < num; i++){
-    var barHeight = Math.florr(random(height));
+    var barHeight = Math.floor(random(height));
     var loc = createVector(i*barWidth, barHeight);
     bars[i] = new Bar(loc);
   }
@@ -35,11 +35,11 @@ function draw(){
 }
 function runBars(){
   for(var i = 0; i < bars.length; i++){
-    bars[i].render()
+    bars[i].render();
   }
 }
 
-function bubbleSort(list){
+function bubbleSort(bars){
   for(var j = bars.length; j > 0 ; j --){
       for (var i = 0 ; i < bars.length; i ++){
 
@@ -50,5 +50,5 @@ function bubbleSort(list){
           }
         }
       }
-      console.log(list);
+      console.log(bars);
     }
