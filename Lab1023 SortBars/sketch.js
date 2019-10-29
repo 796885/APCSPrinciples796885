@@ -33,6 +33,11 @@ function draw(){
   runBars();
 
 }
+function update(){
+  for(var i=0; i<bars.length; i++){
+    bars[i].set(i);
+  }
+}
 function runBars(){
   for(var i = 0; i < bars.length; i++){
     bars[i].render();

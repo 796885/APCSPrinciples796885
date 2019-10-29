@@ -10,3 +10,7 @@ class Bar {
     rect(this.loc.x, this.loc.y, this.w, this.h);
   }
 }
+
+run(){
+  this.render;
+}
