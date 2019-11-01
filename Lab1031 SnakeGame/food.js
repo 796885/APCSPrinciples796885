@@ -1,7 +1,15 @@
 class food{
+  constructor(x,y,c){
+    this.loc.x = createVector(x,y);
+    this.clr = c;
+  }
 
 
 update(){
-  fill(240,10,34);
 
+}
+
+render(){
+  fill(240,10,34);
+}
 }

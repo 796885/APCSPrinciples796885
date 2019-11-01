@@ -1,9 +1,9 @@
-class snake
+class Snake{
 constructor(x, y, dx, dy, c, bodyArr){
   this.loc.x = createVector(x,y);
   this.clr = c;
   this.bodyArr = bodyArr;
-  }
+
 }
 
 update(){
@@ -15,4 +15,5 @@ render(){
   var row = Math.floor(this.loc.x/w);
   var col = Math.floor(this.loc.y/w);
   rect(row*w, col*w + header_height, 10, 10);
+}
 }
