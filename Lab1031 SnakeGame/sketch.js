@@ -36,8 +36,8 @@ function startNewRound(){
 
 function newGame(){
   score=0;
-  snake= new Snake(random(0,200), random(0,200), 40, 40, color(50));
-
+  snake= new Snake(random(0,200), random(0,200), 40, 40, head, body, color(50,50,130));
+  food= new Food(random(0,200), random(0,200), 40, 40, color(200,250,65))
 }
 
 function keyPressed(){
