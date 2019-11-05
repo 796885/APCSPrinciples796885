@@ -11,5 +11,8 @@ update(){
 
 render(){
   fill(240,10,34);
-}
+  }
+run()
+this.update
+this.render
 }

@@ -25,7 +25,7 @@ update(){
   this.loc.y = constrain(this.loc.y, 0, width-w);
 
   //after snake eats food
-  if(this.loc.dist(food.loc) === 0){  
+  if(this.loc.dist(food.loc) === 0){
     this.bodySegments.push(createVector(0,0));
     for(i = 0; i < this.bodySegments.length; i++){
       if(food.loc != this.bodySegments[i].loc){
@@ -33,6 +33,7 @@ update(){
       }
     }
   }
+}
 }
 
 render(){
@@ -44,4 +45,4 @@ render(){
     for(var i = 1; this.bodySegments.length -1; i++){
       rect(this.bodySegments[i].x, this.bodySegments[i].y, w, w);
     }
-}
+  }
