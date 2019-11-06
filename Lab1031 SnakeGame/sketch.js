@@ -2,28 +2,30 @@
 // 	10/31
 //  This is a comment
 //  The setup function function is called once when your program begins
-var w, snake;
+var bodySegments = [];
+var snake, score, food, header_height;
+var Snake
+var head, body
 
 function setup() {
-  var cnv = createCanvas(800, 800);
+  var cnv = createCanvas(800, 600);
   cnv.position((windowWidth-width)/2, 30);
-  background(200, 5, 240);
-  fill(20, 30, 150);
-
-  var w = cnv.width/height;
-
+  background(179, 54, 54);
+  header_height = 800;
+  newGame();
 }
 
 //  The draw function is called @ 30 fps
-function draw() {
- snake.render();
- food.run();
- if (checkTangled === true){
-   newGame();
- }
- if(getFood === true){
-  startNewRound();
-}
+function draw(){
+  background(179, 54, 54);
+  snake.run();
+  food.render();
+  if (checkTangled === true){
+    newGame();
+  }
+  if(getFood === true){
+    startNewRound();
+  }
   function checkTangled(){
     return snake.tangled();
 
@@ -42,12 +44,13 @@ function newGame(){
 
 function keyPressed(){
   if(keyCode=== UP_ARROW){
-}
-if(keyCode=== DOWN_ARROW){
-}
-if(keyCode=== LEFT_ARROW){
-}
-if(keyCode=== RIGHT_ARROW){
+  }
+  if(keyCode=== DOWN_ARROW){
+  }
+  if(keyCode=== LEFT_ARROW){
+  }
+  if(keyCode=== RIGHT_ARROW){
+  }
 }
 
 function run(){
@@ -58,4 +61,8 @@ function run(){
 function getFood(){
 
 }
+function update(){
+  if(keyCode === UP_ARROW){
+    head.position(5,5);
+  }
 }

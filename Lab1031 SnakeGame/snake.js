@@ -1,6 +1,7 @@
 class Snake{
 constructor(x, y, dx, dy, c, bodyArr){
-  this.loc.x = createVector(x,y);
+  this.loc= createVector(x,y);
+  this.loc= createVector(0,0);
   this.clr = c;
   this.bodyArr = bodyArr;
 
@@ -9,7 +10,7 @@ constructor(x, y, dx, dy, c, bodyArr){
 run(){
   this.update();
   this.render();
-}
+}//end run function
 
 update(){
   this.bodySegments[0].x = this.loc.x;
@@ -18,7 +19,7 @@ update(){
      for(var i = this.bodySegments.length - 1; i >= 1; i--){
          this.bodySegments[i].x = this.segments[i - 1].x;
          this.bodySegments[i].y = this.segments[i - 1].y;
-       }
+       }//end update
 
   this.loc.add(this.vel);
   this.loc.x = constrain(this.loc.x, 0, width-w);
@@ -37,12 +38,35 @@ update(){
 }
 
 render(){
-  fill(255,240,76);
-  var row = Math.floor(this.loc.x/w);
-  var col = Math.floor(this.loc.y/w);
-  rect(row*w, col*w + header_height, 10, 10);
-  rect(this.loc.x, this.loc.y, w, w);
-    for(var i = 1; this.bodySegments.length -1; i++){
-      rect(this.bodySegments[i].x, this.bodySegments[i].y, w, w);
-    }
+  fill(this.clr);
+  var row = Math.floor(this.loc.x/this.w);
+  var col = Math.floor(this.loc.y/this.w);
+  rect(row*this.w, col*this.w + header_height, 10, 10);
+  rect(this.loc.x, this.loc.y, this.w, this.w );
+  for(var i = 1; i <= bodySegments.length -1; i++){
+    rect(bodySegments[i].x, bodySegments[i].y, this.w, this.w);
   }
+
+   keyPressed(){
+    if(keyCode === UP_ARROW){
+      this.loc.y = this.loc.y - this.w;
+    }
+    if(keyCode === DOWN_ARROW){
+      this.loc.y = this.loc.y + this.w;
+    }
+    if(keyCode === LEFT_ARROW){
+      this.loc.x = this.loc.x - this.w;
+    }
+    if(keyCode === RIGHT_ARROW){
+      this.loc.x = this.loc.x + this.w;
+    }
+
+  tangled(){
+      //loop checks each segment
+      for(i = 0; i < bodySegments.length; i++){
+        //if stament checking if the locations are equal to each other
+        if(this.loc.x == bodySegments[i].x && this.loc.y == bodySegments[i].y){
+          console.log("Game Over");
+        }
+      }
+    }
