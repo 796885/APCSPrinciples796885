@@ -60,13 +60,18 @@ render(){
     if(keyCode === RIGHT_ARROW){
       this.loc.x = this.loc.x + this.w;
     }
+  }
+    function checkTangled(){
+  return snake.tangled();
+}
+}
 
-  tangled(){
-      //loop checks each segment
-      for(i = 0; i < bodySegments.length; i++){
-        //if stament checking if the locations are equal to each other
-        if(this.loc.x == bodySegments[i].x && this.loc.y == bodySegments[i].y){
-          console.log("Game Over");
-        }
-      }
-    }
+  // tangled(){
+  //     //loop checks each segment
+  //     for(i = 0; i < bodySegments.length; i++){
+  //       //if stament checking if the locations are equal to each other
+  //       if(this.loc.x == bodySegments[i].x && this.loc.y == bodySegments[i].y){
+  //         console.log("Game Over");
+  //       }
+  //     }
+  //   }
