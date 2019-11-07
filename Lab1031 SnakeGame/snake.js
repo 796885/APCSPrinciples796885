@@ -5,6 +5,7 @@ constructor(x, y, dx, dy, c, bodyArr){
   this.clr = c;
   this.bodyArr = bodyArr;
 
+  }
 }
 
 run(){
@@ -19,7 +20,7 @@ update(){
      for(var i = this.bodySegments.length - 1; i >= 1; i--){
          this.bodySegments[i].x = this.segments[i - 1].x;
          this.bodySegments[i].y = this.segments[i - 1].y;
-       }//end update
+       }
 
   this.loc.add(this.vel);
   this.loc.x = constrain(this.loc.x, 0, width-w);
@@ -35,7 +36,7 @@ update(){
     }
   }
 }
-}
+//end update
 
 render(){
   fill(this.clr);
@@ -46,6 +47,7 @@ render(){
   for(var i = 1; i <= bodySegments.length -1; i++){
     rect(bodySegments[i].x, bodySegments[i].y, this.w, this.w);
   }
+}//end render
 
    keyPressed(){
     if(keyCode === UP_ARROW){
@@ -63,8 +65,8 @@ render(){
   }
     function checkTangled(){
   return snake.tangled();
-}
-}
+}//end function checkTangled
+
 
   // tangled(){
   //     //loop checks each segment
