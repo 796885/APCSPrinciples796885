@@ -4,7 +4,6 @@ constructor(x, y, dx, dy, c, bodyArr){
   this.loc= createVector(0,0);
   this.clr = c;
   this.bodyArr = bodyArr;
-
   }
 }
 

@@ -1,9 +1,9 @@
 //  Natalie Hallmann
-// 	10/31
+// 	10/31 SnakeGame
 //  This is a comment
 //  The setup function function is called once when your program begins
 var bodySegments = [];
-var snake, score, food, header_height;
+var snake, score, header_height;
 var Snake
 var head, body
 
@@ -38,8 +38,8 @@ function startNewRound(){
 
 function newGame(){
   score=0;
-  snake= new Snake(random(0,200), random(0,200), 40, 40, head, body, color(50,50,130));
-  food= new Food(random(0,200), random(0,200), 40, 40, color(200,250,65))
+  snake= new Snake (random(0,200), random(0,200), 40, 40, head, body, color(50,50,130));
+  food= new Food (random(0,200), random(0,200), 40, 40, color(200,250,65))
 }
 
 function keyPressed(){

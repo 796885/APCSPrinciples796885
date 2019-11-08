@@ -5,10 +5,9 @@ class food{
   }
 
 render(){
-  fill(240,10,34);
+  fill(240,100,34);
   rect(this.loc.x, this.loc.y, this.w, this.w);
   }
-}
 
 run(){
 this.update
@@ -21,3 +20,6 @@ tangled(){
       this.loc.y = this.cubeWidth * int(random(0,800/this.cubeWidth));
       loadObjects(1);
     }
+}
+
+}
