@@ -4,17 +4,13 @@ class food{
     this.clr = c;
   }
 
-
-update(){
-
-}
-
 render(){
   fill(240,10,34);
   rect(this.loc.x, this.loc.y, this.w, this.w);
   }
-  }
-run()
+}
+
+run(){
 this.update
 this.render
 }
