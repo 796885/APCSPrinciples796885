@@ -65,4 +65,25 @@ function update(){
   if(keyCode === UP_ARROW){
     head.position(5,5);
   }
+
+}
+function loadObjects(n){
+  snake = new Snake (Math.floor(Math.random()*26)*30,Math.floor(Math.random()*26)*30,30, color(227, 69, 7));
+    for (var j = 0; j < n; j++){
+      food[j] = new Food (Math.floor(Math.random()*26)*30,Math.floor(Math.random()*26)*30, color(70));
+      }
+  }
+
+  function runObjects(){
+      snake.run();
+  }
+
+  tangled(){
+      if(snakeHead.loc.x === this.loc.x && snakeHead.loc.y === this.loc.y){
+        this.loc.x = this.cubeWidth * int(random(0,800/this.cubeWidth));
+        this.loc.y = this.cubeWidth * int(random(0,800/this.cubeWidth));
+        loadObjects(1);
+      }
+  }
+
 }

@@ -22,4 +22,11 @@ tangled(){
     }
 }
 
+update(){
+  if(snake.head.x === this.loc.x &&
+   snake.head.y === this.loc.y){
+  this.loc.x = Math.floor(random(0,79))*30;
+  this.loc.y = Math.floor(random(0,79))*30;
+}
+
 }
