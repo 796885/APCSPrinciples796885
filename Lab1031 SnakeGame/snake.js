@@ -1,80 +1,84 @@
 class Snake{
-  constructor(x, y, dx, dy){
-    this.loc= createVector(x,y);
-    this.vel = createVector(dx, dy);+
+  constructor(x, y, w, c){
+    this.head =createVector(x,y);
+    this.vel = createVector(0,0);
+    this.w = 30;
     this.clr = c;
-    this.bodyArr = [];
-  }
+    this.body = [];
+
+  }// end constructor
 
   run(){
     this.update();
     this.render();
-  }//end run function
+  } //end run
 
   update(){
-    this.bodySegments[0].x = this.loc.x;
-    this.bodySegments[0].y = this.loc.y;
-
-    for(var i = this.bodySegments.length - 1; i >= 1; i--){
-      this.bodySegments[i].x = this.segments[i - 1].x;
-      this.bodySegments[i].y = this.segments[i - 1].y;
+    this.keyPressed();
+     for(var i = 0; i< food.length; i++){
+     if(this.head.x === food[i].loc.x &&
+        this.head.y === food[i].loc.y){
+          this.loadSegment();
+          food.push(new Food (Math.floor(Math.random()*25)*30,Math.floor(Math.random()*25)*30, color(70)));
+          score++;
+      }
     }
+     // update for body
+     for (i = this.body.length-1; i>=0; i--){
+     if (i >= 1){
+       this.body[i].x = this.body[i-1].x;
+       this.body[i].y = this.body[i-1].y;
+    }  if (i === 0){
+       this.body[i].x = this.head.x;
+       this.body[i].y = this.head.y;
+     }
+  }
 
-    this.loc.add(this.vel);
-    this.loc.x = constrain(this.loc.x, 0, width-w);
-    this.loc.y = constrain(this.loc.y, 0, width-w);
+}//end update
 
-    // snake eats food
-    if(this.loc.dist(food.loc) === 0){
-      this.bodySegments.push(createVector(0,0));
-      for(i = 0; i < this.bodySegments.length; i++){
-        if(food.loc != this.bodySegments[i].loc){
-          food.loc = createVector(width / 2 - Math.floor(Math.random()*16-8)*w, height / 2+Math.floor(Math.random()*12-6)*w);
-        }
+  render(){//render head and the body
+    fill(this.clr);
+    rect(this.head.x, this.head.y, this.w, this.w);
+    for(var i = 0; i < this.body.length; i++){
+      rect(this.body[i].x, this.body[i].y, 30, 30);
+   }
+ }
+
+  loadSegment(){
+    this.body.push(createVector(this.head.x, this.head.y));
+  }
+
+  tangled(){
+    //loop checking segments
+    for(var i = 0; i < this.body.length; i++){
+      if(this.head.x === this.body[i].x || this.head.y === this.body[i].y){
       }
     }
   }
-  //end update
 
-  render(){
-    fill(this.clr);
-    var row = Math.floor(this.loc.x/this.w);
-    var col = Math.floor(this.loc.y/this.w);
-    rect(row*this.w, col*this.w + header_height, 10, 10);
-    rect(this.loc.x, this.loc.y, this.w, this.w );
-    for(var i = 1; i <= bodySegments.length -1; i++){
-      rect(bodySegments[i].x, bodySegments[i].y, this.w, this.w);
-    }
-  }//end render
-
-  keyPressed(){//when keys are pressed to move snake
+   keyPressed(){ //how player moves snake around
+     this.head.add(this.vel);
     if(keyCode === UP_ARROW){
-      this.loc.y = this.loc.y - this.w;
+        this.vel.x = 0;
+        this.vel.y = -30;
     }
     if(keyCode === DOWN_ARROW){
-      this.loc.y = this.loc.y + this.w;
-    }
+      this.vel.x = 0;
+      this.vel.y = 30;
+
+  //
+      }
     if(keyCode === LEFT_ARROW){
-      this.loc.x = this.loc.x - this.w;
-    }
+      this.vel.y = 0;
+      this.vel.x = -30;
+
+      }
     if(keyCode === RIGHT_ARROW){
-      this.loc.x = this.loc.x + this.w;
-    }
-  }
-
-  checkTangled(){
-    //return snake.tangled();
-  }//end function checkTangled
+      this.vel.y = 0;
+      this.vel.x = 30
 
 
-    // tangled(){
-    //     //loop checks each segment
-    //     for(i = 0; i < bodySegments.length; i++){
-    //       //if stament checking if the locations are equal to each other
-    //       if(this.loc.x == bodySegments[i].x && this.loc.y == bodySegments[i].y){
-    //         console.log("Game Over");
-    //       }
-    //     }
-    //   }
+      }
+  }//end
 
 }//  +++++++++++++++++++++++++++++++++++++++++++  end Snake
