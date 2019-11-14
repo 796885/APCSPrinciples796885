@@ -2,7 +2,7 @@
 // 	10/31 SnakeGame
 //  This is a comment
 //  The setup function function is called once when your program begins
-var score, header_height, snake, difficulty;
+var score, header_height, snake, playgame;
 var h = 10;
 var food = [];
 var body = [];
@@ -38,8 +38,8 @@ function startGame(){
   textSize(90);
 
   fill(30,178,250);
-  textAlign(RIGHT);
-  textFont('Times New Roman')
+  textAlign(CENTER);
+  textFont('Courior')
   text ("Snake Game", 600, 200);
   textAlign(CENTER);
 
