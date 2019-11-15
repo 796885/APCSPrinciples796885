@@ -15,7 +15,7 @@ function setup() {
   background(80, 138, 230);
   header_height = 800;
   score = 0;
-  loadObjects(3);
+  loadObjects(2);
   newButton();
 }
 
@@ -88,7 +88,7 @@ function startGame(){
 }
 
 function playGame(){
-  frameRate(10);
+  frameRate(30);
   background(0, 0, 0);
   runObjects();
   fill(80, 138, 230);
@@ -101,4 +101,7 @@ background(255, 0, 183);
  fill(80, 138, 230);
  textSize(100);
  text("YOU LOSE!", 400, 400);
+  textSize(40);
+ text("PRESS THE REFRESH BUTTON", 400, 600);
+ text("TO PLAY AGAIN", 400, 700);
 }
