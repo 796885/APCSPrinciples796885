@@ -6,12 +6,12 @@ class Snake{
     this.clr = c;
     this.body = [];
 
-  }// end constructor
+  }
 
   run(){
     this.update();
     this.render();
-  } //end run
+  }
 
   update(){
     this.keyPressed();
@@ -23,7 +23,6 @@ class Snake{
           score++;
       }
     }
-     // update for body
      for (i = this.body.length-1; i>=0; i--){
      if (i >= 1){
        this.body[i].x = this.body[i-1].x;
@@ -36,8 +35,9 @@ class Snake{
 
 }//end update
 
-  render(){//render head and the body
-    fill(this.clr);
+  render(){
+ // rendering head and body
+    fill(255, 0, 183);
     rect(this.head.x, this.head.y, this.w, this.w);
     for(var i = 0; i < this.body.length; i++){
       rect(this.body[i].x, this.body[i].y, 30, 30);
@@ -49,14 +49,15 @@ class Snake{
   }
 
   tangled(){
-    //loop checking segments
-    for(var i = 0; i < this.body.length; i++){
-      if(this.head.x === this.body[i].x || this.head.y === this.body[i].y){
-      }
+    //loop checking segment
+  for(var i = 1; i < this.body.length; i++){
+    if(this.head.x == this.body[i].x && this.head.y == this.body[i].y){
+      return true;
     }
   }
+  }
 
-   keyPressed(){ //how player moves snake around
+   keyPressed(){//when play presses key to move snake
      this.head.add(this.vel);
     if(keyCode === UP_ARROW){
         this.vel.x = 0;
@@ -66,19 +67,16 @@ class Snake{
       this.vel.x = 0;
       this.vel.y = 30;
 
-  //
       }
     if(keyCode === LEFT_ARROW){
       this.vel.y = 0;
       this.vel.x = -30;
-
       }
     if(keyCode === RIGHT_ARROW){
       this.vel.y = 0;
       this.vel.x = 30
 
-
       }
-  }//end
+  }
 
 }//  +++++++++++++++++++++++++++++++++++++++++++  end Snake

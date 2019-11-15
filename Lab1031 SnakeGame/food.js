@@ -11,7 +11,7 @@ run(){
 }
 
 render(){
-    fill(this.clr);
+    fill(255,255,255);
     rect(this.loc.x, this.loc.y, 30, 30);
 }
 
@@ -21,5 +21,9 @@ update(){
   this.loc.x = Math.floor(random(0,79))*30;
   this.loc.y = Math.floor(random(0,79))*30;
 }
+
+}
+
+
 
 }

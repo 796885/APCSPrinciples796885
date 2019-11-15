@@ -2,75 +2,34 @@
 // 	10/31 SnakeGame
 //  This is a comment
 //  The setup function function is called once when your program begins
-var score, header_height, snake, playgame;
+var score, header_height, snake, difficulty;
+var gameState = 1;
 var h = 10;
+var newButton;
+var btnPlay;
 var food = [];
 var body = [];
-var btnPlay
-var gameState = 1;
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
-  background(217, 189, 124);
+  background(80, 138, 230);
   header_height = 800;
   score = 0;
-  loadObjects(2);
+  loadObjects(3);
   newButton();
 }
 
-function draw(){
+function draw(){//draws start,play, and end screens
     if (gameState ===1){
-      startGame(); //start screen
+      startGame();
     }else if (gameState === 2){
-      playGame(); //game screen
+      playGame();
     }else if (gameState === 3){
       instructionsText();
-    }else if (gameState === 4){ //game over screen
+    }else if (gameState === 4){
       endGame();
   }
 }
-
-function newButton(){
-  btnPlay = new Button(50, 450, 200, 200, color(68, 19, 218) );
-}
-
-function startGame(){
-  textSize(90);
-
-  fill(30,178,250);
-  textAlign(CENTER);
-  textFont('Courior')
-  text ("Snake Game", 600, 200);
-  textAlign(CENTER);
-
-  btnPlay.render(); //draws play button
-
-  textSize (45); //text for button
-  fill(255);
-  text ("PLAY", 400, 400, 200, 200);
-
-    checkPlayGame(); // if play button is chosen
-    if (checkPlayGame === 'PLAY' || difficulty === 'medium'|| difficulty === 'hard'){
-      if (difficulty === 'easy'){
-        loadObjects(7);
-      gameState = 2; // play game
-    }
-}
-
-function playGame(){
-  frameRate(10);
-  background(100, 200, 100);
-  runObjects();
-  text ("Score: " + score, 100, 50);
-  checkTangled();
-}
-
-function loadObjects(n){
-  snake = new Snake (Math.floor(Math.random()*26)*30,Math.floor(Math.random()*26)*30,30, color(227, 69, 7));
-    for (var j = 0; j < n; j++){
-      food[j] = new Food (Math.floor(Math.random()*26)*30,Math.floor(Math.random()*26)*30, color(70));
-      }
-  }
 
 function runObjects(){
     snake.run();
@@ -81,15 +40,65 @@ function runObjects(){
 }
 
 function checkTangled(){
-  return snake.tangled();
+  if(snake.tangled() === true){
+    gameState  = 4;
+  }
 }
 
-function startNewRound(){
+function loadObjects(n){
+  snake = new Snake (Math.floor(Math.random()*26)*30,Math.floor(Math.random()*26)*30,30, color(227, 69, 7));
+    for (var j = 0; j < n; j++){
+      food[j] = new Food (Math.floor(Math.random()*26)*30,Math.floor(Math.random()*26)*30, color(70));
+      }
+  }
 
+
+function newButton(){
+  btnPlay = new Button(260, 450, 260, 200, color(255, 0, 183) );
 }
 
-
-function getFood() {
-
+function checkDifficulty(){ //check if 'play' is clicked
+  if (btnPlay.isClicked()=== true){
+     difficulty = 'Play';
+   }
 }
+
+function startGame(){
+  textSize(80);
+
+  fill(0, 0, 0);
+  textAlign(RIGHT);
+  textFont('fontBold');
+  text ("Snake Game", 600, 300); //title
+  textAlign(CENTER);
+
+  btnPlay.render();
+
+  textSize (45);
+  fill(0);
+  text ("Play", 265, 525, 265, 200);
+
+    checkDifficulty(); // checks if play is chosen
+    if (difficulty === 'Play'){
+      if (difficulty === 'Play'){
+        loadObjects(7);
+      }
+      gameState = 2; // play game
+    }
+}
+
+function playGame(){
+  frameRate(10);
+  background(0, 0, 0);
+  runObjects();
+  fill(80, 138, 230);
+  text ("Score: " + score, 700, 50); //score
+  checkTangled();
+}
+
+function endGame(){
+background(255, 0, 183);
+ fill(80, 138, 230);
+ textSize(100);
+ text("YOU LOSE!", 400, 400);
 }
