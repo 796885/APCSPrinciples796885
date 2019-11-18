@@ -78,7 +78,7 @@ function startGame(){
   fill(0);
   text ("Play", 265, 525, 265, 200);
 
-    checkDifficulty(); // checks if play is chosen
+    checkDifficulty(); // checks if play button is chosen
     if (difficulty === 'Play'){
       if (difficulty === 'Play'){
         loadObjects(7);
