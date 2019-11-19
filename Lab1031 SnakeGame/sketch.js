@@ -13,7 +13,7 @@ var body = [];
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
-  background(22, 7, 235);
+  background(77, 168, 179);
   header_height = 800;
   score = 0;
   loadObjects(2);
@@ -55,23 +55,25 @@ function loadObjects(n){
 
 
 function newButton(){
-  btnPlay = new Button(260, 450, 260, 200, color(255, 0, 183) );
-  btnReplay = new Button(260, 450, 260, 200, color(80, 138, 230));
+  btnPlay = new Button(260, 450, 260, 200, color(235, 122, 184) );
+  btnReplay = new Button(260, 450, 260, 200, color(77, 168, 179));
 }
 
 function checkDifficulty(){ //check if 'play' is clicked
 if (btnPlay.isClicked()=== true){
   difficulty = 'Play';
 }
+if (btnReplay.isClicked()=== true){
+  difficulty = 'Replay';
 }
 
 function startGame(){
-  textSize(80);
+  textSize(100);
 
   fill(0, 0, 0);
   textAlign(RIGHT);
   textFont('fontBold');
-  text ("Snake Game", 600, 300); //title
+  text ("Snake Game", 650, 300); //title
   textAlign(CENTER);
 
   btnPlay.render();
@@ -82,37 +84,38 @@ function startGame(){
 
   checkDifficulty(); // checks if play button is chosen
   if (difficulty === 'Play'){
-    if (difficulty === 'Play'){
       loadObjects(7);
     }
     gameState = 2; // play game
+    if (difficulty=== 'Replay'){
+      game state = 1
+    }
   }
-}
 
 function playGame(){
   frameRate(30);
   background(0, 0, 0);
   runObjects();
-  fill(80, 138, 230);
+  fill(77, 168, 179);
   text ("Score: " + score, 700, 50); //score
   checkTangled();
 }
 
 function endGame(){
-  background(255, 0, 183);
-  fill(80, 138, 230);
+  background(235, 122, 184);
+  fill(0, 0, 0);
   textSize(100);
-  text("YOU LOSE!", 400, 400);
-  textSize(40);
-  text("PRESS THE REFRESH BUTTON", 400, 600);
-  text("TO PLAY AGAIN", 400, 700);
+  textFont('fontBold');
+  text("YOU LOSE!", 400, 350);
 
   btnReplay.render();
 
+  textSize (45);
+  fill(0);
+  text ("Play Again?", 265, 525, 265, 200);
+
   checkDifficulty(); // checks if replay button is chosen
   if (difficulty === 'Replay'){
-    if (difficulty === 'Replay'){
-    }
-    gameState = 1; // start game
+    gameState = 1; // return to start game
   }
 }

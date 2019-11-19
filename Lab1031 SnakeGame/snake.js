@@ -37,7 +37,7 @@ class Snake{
 
     render(){
       // rendering head and body
-      fill(255, 0, 183);
+      fill(235, 122, 184);
       rect(this.head.x, this.head.y, this.w, this.w);
       for(var i = 0; i < this.body.length; i++){
         rect(this.body[i].x, this.body[i].y, 30, 30);
