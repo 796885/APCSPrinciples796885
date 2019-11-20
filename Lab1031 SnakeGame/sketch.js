@@ -56,15 +56,12 @@ function loadObjects(n){
 
 function newButton(){
   btnPlay = new Button(260, 450, 260, 200, color(235, 122, 184) );
-  btnReplay = new Button(260, 450, 260, 200, color(77, 168, 179));
 }
 
 function checkDifficulty(){ //check if 'play' is clicked
 if (btnPlay.isClicked()=== true){
   difficulty = 'Play';
 }
-if (btnReplay.isClicked()=== true){
-  difficulty = 'Replay';
 }
 
 function startGame(){
@@ -82,14 +79,13 @@ function startGame(){
   fill(0);
   text ("Play", 265, 525, 265, 200);
 
+  gameStat = 1
+
   checkDifficulty(); // checks if play button is chosen
   if (difficulty === 'Play'){
       loadObjects(7);
     }
     gameState = 2; // play game
-    if (difficulty=== 'Replay'){
-      game state = 1
-    }
   }
 
 function playGame(){
@@ -107,15 +103,4 @@ function endGame(){
   textSize(100);
   textFont('fontBold');
   text("YOU LOSE!", 400, 350);
-
-  btnReplay.render();
-
-  textSize (45);
-  fill(0);
-  text ("Play Again?", 265, 525, 265, 200);
-
-  checkDifficulty(); // checks if replay button is chosen
-  if (difficulty === 'Replay'){
-    gameState = 1; // return to start game
   }
-}
