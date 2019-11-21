@@ -6,7 +6,6 @@ var score, header_height, snake, difficulty;
 var gameState = 1;
 var h = 10;
 var newButton;
-var btnReplay;
 var btnPlay;
 var food = [];
 var body = [];
@@ -58,11 +57,11 @@ function newButton(){
   btnPlay = new Button(260, 450, 260, 200, color(235, 122, 184) );
 }
 
-function checkDifficulty(){ //check if 'play' is clicked
-if (btnPlay.isClicked()=== true){
+ checkDifficulty(); //check if 'play' is clicked
+  if (btnPlay.isClicked()=== true){
   difficulty = 'Play';
-}
-}
+  }
+
 
 function startGame(){
   textSize(100);
@@ -71,7 +70,7 @@ function startGame(){
   textAlign(RIGHT);
   textFont('fontBold');
   text ("Snake Game", 650, 300); //title
-  textAlign(CENTER);
+  
 
   btnPlay.render();
 
@@ -79,14 +78,15 @@ function startGame(){
   fill(0);
   text ("Play", 265, 525, 265, 200);
 
-  gameStat = 1
-
-  checkDifficulty(); // checks if play button is chosen
+  gameState = 1
+}
+  function checkDifficulty(){ // checks if play button is chosen
   if (difficulty === 'Play'){
       loadObjects(7);
     }
     gameState = 2; // play game
-  }
+}
+
 
 function playGame(){
   frameRate(30);

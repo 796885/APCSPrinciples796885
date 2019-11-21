@@ -8,10 +8,10 @@ constructor(x, y, w, h , clr){
   this.clr = clr;
 }
 isClicked(){ // to check if play button is pressed
-if (mouseIsPressed&& mouseX > this.loc.x && mouseX< this.loc.x+this.w&&
+  if (mouseIsPressed&& mouseX > this.loc.x && mouseX< this.loc.x+this.w&&
     mouseY>this.loc.y && mouseY<this.loc.y+this.h){
         return true;
-}
+      }
 }
 render(){ // renders button
 fill(this.clr);
