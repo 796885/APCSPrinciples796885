@@ -70,7 +70,7 @@ function startGame(){
   textAlign(RIGHT);
   textFont('fontBold');
   text ("Snake Game", 650, 300); //title
-  
+
 
   btnPlay.render();
 
@@ -102,5 +102,5 @@ function endGame(){
   fill(0, 0, 0);
   textSize(100);
   textFont('fontBold');
-  text("YOU LOSE!", 400, 350);
+  text("YOU LOSE!", 150, 350);
   }
