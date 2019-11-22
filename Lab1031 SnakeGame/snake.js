@@ -8,12 +8,12 @@ class Snake{
 
   }
 
-  run(){
+  run(){//runs the snake
     this.update();
     this.render();
   }
 
-  update(){
+  update(){//updates head, body, and reaction with food
     this.keyPressed();
     for(var i = 0; i< food.length; i++){
       if(this.head.x === food[i].loc.x &&
@@ -44,7 +44,7 @@ class Snake{
       }
     }
 
-    loadSegment(){
+    loadSegment(){//load body segments
       this.body.push(createVector(this.head.x, this.head.y));
     }
 

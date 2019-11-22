@@ -31,7 +31,7 @@ function draw(){//draws start,play, and end screens
   }
 }
 
-function runObjects(){
+function runObjects(){//runs the snake and food objects
   snake.run();
 
   for(var i = 0; i< food.length; i++){
@@ -39,13 +39,13 @@ function runObjects(){
   }
 }
 
-function checkTangled(){
+function checkTangled(){//checks if head touches other body segment
   if(snake.tangled() === true){
     gameState  = 4;
   }
 }
 
-function loadObjects(n){
+function loadObjects(n){//loads snake and food objects
   snake = new Snake (Math.floor(Math.random()*26)*30,Math.floor(Math.random()*26)*30,30, color(227, 69, 7));
   for (var j = 0; j < n; j++){
     food[j] = new Food (Math.floor(Math.random()*26)*30,Math.floor(Math.random()*26)*30, color(70));
@@ -53,7 +53,7 @@ function loadObjects(n){
 }
 
 
-function newButton(){
+function newButton(){//does not show up
   btnPlay = new Button(260, 450, 260, 200, color(235, 122, 184) );
 }
 
@@ -72,7 +72,7 @@ function startGame(){
   text ("Snake Game", 650, 300); //title
 
 
-  btnPlay.render();
+  btnPlay.render();//does not show up
 
   textSize (45);
   fill(0);
@@ -84,20 +84,21 @@ function startGame(){
   if (difficulty === 'Play'){
       loadObjects(7);
     }
-    gameState = 2; // play game
+    gameState = 2; // automatically goes to play game
 }
 
 
-function playGame(){
-  frameRate(30);
+function playGame(){//set up the play gameState
+  frameRate(20);
   background(0, 0, 0);
   runObjects();
   fill(77, 168, 179);
-  text ("Score: " + score, 700, 50); //score
+  textSize(30);
+  text ("Score: " + score, 650, 50); //score
   checkTangled();
 }
 
-function endGame(){
+function endGame(){//once head touches other body segment
   background(235, 122, 184);
   fill(0, 0, 0);
   textSize(100);

@@ -7,7 +7,7 @@ constructor(x, y, w, h , clr){
   this.h = h;
   this.clr = clr;
 }
-isClicked(){ // to check if play button is pressed
+isClicked(){ // to check if play button is pressed(does not show up)
   if (mouseIsPressed&& mouseX > this.loc.x && mouseX< this.loc.x+this.w&&
     mouseY>this.loc.y && mouseY<this.loc.y+this.h){
         return true;
